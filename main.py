@@ -21,12 +21,12 @@ def show_board(b):
 
 
 # Create a loop to keep game running
-while move_counter < 9:
+while move_counter < 9 and winner is None:
     # Print board
     show_board(board)
 
     # Ask player for row and col
-    if player_turn == 1 and move_counter != 9:
+    if player_turn == 1 and move_counter != 9 and winner is None:
         # Player 1 turn
         print('Player 1 turn')
         row = int(input('Enter row (0 or 1 or 2): '))
@@ -41,7 +41,7 @@ while move_counter < 9:
                 move_counter += 1
                 player_turn = 2
 
-    elif player_turn == 2 and move_counter != 9:
+    elif player_turn == 2 and move_counter != 9 and winner is None:
         # Player 2 turn
         print('Player 2 turn')
         row = int(input('Enter row (0 or 1 or 2): '))
@@ -80,7 +80,7 @@ while move_counter < 9:
         winner = board[0][2]
 
 # Print board after the game is over
-if move_counter == 9:
+if move_counter == 9 or winner is not None:
     show_board(board)
 
 # Print winner
