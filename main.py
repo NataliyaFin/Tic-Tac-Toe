@@ -5,9 +5,7 @@ You will make your move by entering a number of row and col: from 0 to 2.
 The ultimate battle is about to begin! \n """)
 
 # Create a 3x3 board
-board = [['_', '_', '_'],
-         ['_', '_', '_'],
-         ['_', '_', '_']]
+board = [['_'] * 3 for _ in range(3)]
 
 # Initialize player turn and winner
 player_turn = 1
@@ -17,7 +15,7 @@ move_counter = 0
 # Create a loop to keep game running
 while move_counter < 9:
     # Print board
-    print ('  0 1 2')
+    print('  0 1 2')
     for i in range(len(board)):
         print(str(i), *board[i])
 
@@ -77,7 +75,7 @@ while move_counter < 9:
 
 # Print board after the game is over
 if move_counter == 9:
-    print ('  0 1 2')
+    print('  0 1 2')
     for i in range(len(board)):
         print(str(i), *board[i])
 
