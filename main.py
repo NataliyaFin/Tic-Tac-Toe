@@ -17,8 +17,9 @@ move_counter = 0
 # Create a loop to keep game running
 while move_counter < 9:
     # Print board
-    for row in board:
-        print(row)
+    print ('  0 1 2')
+    for i in range(len(board)):
+        print(str(i), *board[i])
 
     # Ask player for row and col
     if player_turn == 1 and move_counter != 9:
@@ -76,8 +77,9 @@ while move_counter < 9:
 
 # Print board after the game is over
 if move_counter == 9:
-    for row in board:
-        print(row)
+    print ('  0 1 2')
+    for i in range(len(board)):
+        print(str(i), *board[i])
 
 # Print winner
 if move_counter == 9 and winner is None:
